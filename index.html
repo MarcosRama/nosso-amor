@@ -8,36 +8,38 @@
 </head>
 <body>
   <div class="container">
-    <h1>Juntos Há...</h1>
-    
-    <!-- Contador -->
-    <div id="timer">
-      <div><span id="years">0</span><label>Anos</label></div>
-      <div><span id="months">0</span><label>Meses</label></div>
-      <div><span id="days">0</span><label>Dias</label></div>
-      <div><span id="hours">0</span><label>Horas</label></div>
-      <div><span id="minutes">0</span><label>Minutos</label></div>
-      <div><span id="seconds">0</span><label>Segundos</label></div>
+    <h1>Nossa História</h1>
+
+    <!-- Contador 1: Primeiro Beijo -->
+    <h2>Nosso Primeiro Beijo (18/11/2023)</h2>
+    <div id="beijo-timer" class="timer">
+      <div><span id="beijo-years">0</span><label>Anos</label></div>
+      <div><span id="beijo-months">0</span><label>Meses</label></div>
+      <div><span id="beijo-days">0</span><label>Dias</label></div>
+      <div><span id="beijo-hours">0</span><label>Horas</label></div>
+      <div><span id="beijo-minutes">0</span><label>Minutos</label></div>
+      <div><span id="beijo-seconds">0</span><label>Segundos</label></div>
     </div>
 
-    <!-- Mídia: Foto ou Vídeo -->
+    <!-- Contador 2: Início do Caso -->
+    <h2>Início do Nosso Caso (30/11/2023)</h2>
+    <div id="caso-timer" class="timer">
+      <div><span id="caso-years">0</span><label>Anos</label></div>
+      <div><span id="caso-months">0</span><label>Meses</label></div>
+      <div><span id="caso-days">0</span><label>Dias</label></div>
+      <div><span id="caso-hours">0</span><label>Horas</label></div>
+      <div><span id="caso-minutes">0</span><label>Minutos</label></div>
+      <div><span id="caso-seconds">0</span><label>Segundos</label></div>
+    </div>
+
+    <!-- Foto do Casal -->
     <div class="media-container">
       <img src="foto.jpg" alt="Foto do Casal">
-      <!-- Caso queira vídeo em vez de imagem, substitua a linha acima por:
-      <video autoplay loop muted playsinline src="video.mp4"></video> 
-      -->
     </div>
 
     <!-- Player do Spotify -->
-    <div class="<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/6tDBqLL9ucSov84kZH6V1Z?utm_source=generator&si=f1fe510efcc0476c" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>">
-      <!-- Substitua o link 'src' abaixo pelo iframe incorporado do seu Spotify -->
-      <iframe style="border-radius:12px" 
-              src="https://open.spotify.com/embed/track/SUA_MUSICA_AQUI?utm_source=generator" 
-              width="100%" height="152" frameborder="0" 
-              allowfullscreen="" 
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-              loading="lazy">
-      </iframe>
+    <div class="spotify-container">
+      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/6tDBqLL9ucSov84kZH6V1Z?utm_source=generator&si=632a548636ae48cf" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
   </div>
 
