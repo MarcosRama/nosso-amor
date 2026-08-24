@@ -25,36 +25,45 @@ h1 {
   margin-bottom: 20px;
 }
 
-#timer {
+h2 {
+  font-size: 1.1rem;
+  color: #880e4f;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.timer {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 25px;
+  gap: 8px;
+  margin-bottom: 20px;
 }
 
-#timer div {
+.timer div {
   background: #f8bbd0;
   padding: 10px;
   border-radius: 10px;
-  min-width: 60px;
+  min-width: 55px;
+  flex: 1;
 }
 
-#timer span {
-  font-size: 1.5rem;
+.timer span {
+  font-size: 1.3rem;
   font-weight: bold;
   color: #880e4f;
   display: block;
 }
 
-#timer label {
-  font-size: 0.8rem;
+.timer label {
+  font-size: 0.75rem;
   color: #4a148c;
 }
 
 .media-container img, .media-container video {
   max-width: 100%;
   border-radius: 15px;
+  margin-top: 15px;
   margin-bottom: 20px;
 }
 
