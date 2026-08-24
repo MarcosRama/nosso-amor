@@ -1,4 +1,4 @@
-// Datas dos marcos
+// Datas dos marcos do casal
 const primeiroBeijoDate = new Date('2023-11-18T11:30:00');
 const inicioCasoDate = new Date('2023-11-30T00:00:00');
 
@@ -40,23 +40,27 @@ function calculateExactTime(startDate) {
 function updateTimers() {
   // Primeiro Beijo
   const beijo = calculateExactTime(primeiroBeijoDate);
-  document.getElementById('beijo-years').innerText = beijo.years;
-  document.getElementById('beijo-months').innerText = beijo.months;
-  document.getElementById('beijo-days').innerText = beijo.days;
-  document.getElementById('beijo-hours').innerText = beijo.hours;
-  document.getElementById('beijo-minutes').innerText = beijo.minutes;
-  document.getElementById('beijo-seconds').innerText = beijo.seconds;
+  if (document.getElementById('beijo-years')) {
+    document.getElementById('beijo-years').innerText = beijo.years;
+    document.getElementById('beijo-months').innerText = beijo.months;
+    document.getElementById('beijo-days').innerText = beijo.days;
+    document.getElementById('beijo-hours').innerText = beijo.hours;
+    document.getElementById('beijo-minutes').innerText = beijo.minutes;
+    document.getElementById('beijo-seconds').innerText = beijo.seconds;
+  }
 
   // Início do Caso
   const caso = calculateExactTime(inicioCasoDate);
-  document.getElementById('caso-years').innerText = caso.years;
-  document.getElementById('caso-months').innerText = caso.months;
-  document.getElementById('caso-days').innerText = caso.days;
-  document.getElementById('caso-hours').innerText = caso.hours;
-  document.getElementById('caso-minutes').innerText = caso.minutes;
-  document.getElementById('caso-seconds').innerText = caso.seconds;
+  if (document.getElementById('caso-years')) {
+    document.getElementById('caso-years').innerText = caso.years;
+    document.getElementById('caso-months').innerText = caso.months;
+    document.getElementById('caso-days').innerText = caso.days;
+    document.getElementById('caso-hours').innerText = caso.hours;
+    document.getElementById('caso-minutes').innerText = caso.minutes;
+    document.getElementById('caso-seconds').innerText = caso.seconds;
+  }
 }
 
-// Atualiza a cada 1 segundo
+// Executa e atualiza a cada segundo
 setInterval(updateTimers, 1000);
 updateTimers();
