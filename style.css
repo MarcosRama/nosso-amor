@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #fce4ec;
@@ -8,16 +12,43 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 20px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Fundo Corações Caindo */
+.hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  top: -20px;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(105vh) rotate(360deg);
+    opacity: 0;
+  }
 }
 
 .container {
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
   padding: 30px;
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   text-align: center;
   max-width: 500px;
   width: 100%;
+  z-index: 1;
 }
 
 h1 {
@@ -28,10 +59,11 @@ h1 {
 h2 {
   font-size: 1.1rem;
   color: #880e4f;
-  margin-top: 20px;
+  margin-top: 15px;
   margin-bottom: 10px;
 }
 
+/* Timers */
 .timer {
   display: flex;
   justify-content: space-around;
@@ -60,11 +92,142 @@ h2 {
   color: #4a148c;
 }
 
-.media-container img, .media-container video {
+.media-container img {
   max-width: 100%;
   border-radius: 15px;
-  margin-top: 15px;
+  margin-top: 10px;
   margin-bottom: 20px;
+}
+
+/* Seções Adicionais */
+.section-box {
+  background: #fff5f8;
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #f8bbd0;
+}
+
+/* Carta */
+.btn-love {
+  background: #d81b60;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-love:hover {
+  background: #ad1457;
+}
+
+.letter-content {
+  margin-top: 15px;
+  padding: 15px;
+  background: #ffffff;
+  border-left: 4px solid #d81b60;
+  border-radius: 8px;
+  text-align: left;
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Linha do Tempo */
+.timeline {
+  text-align: left;
+  margin-top: 10px;
+}
+
+.timeline-item {
+  padding-left: 15px;
+  border-left: 2px solid #d81b60;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '•';
+  color: #d81b60;
+  font-size: 1.5rem;
+  position: absolute;
+  left: -7px;
+  top: -5px;
+}
+
+.timeline-date {
+  font-weight: bold;
+  color: #880e4f;
+  font-size: 0.85rem;
+}
+
+.timeline-content {
+  font-size: 0.9rem;
+  margin-top: 2px;
+}
+
+/* Cartões Interativos */
+.sub-text {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.card {
+  height: 90px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  font-size: 0.85rem;
+}
+
+.card-front {
+  background-color: #f8bbd0;
+  color: #880e4f;
+  font-weight: bold;
+}
+
+.card-back {
+  background-color: #d81b60;
+  color: white;
+  transform: rotateY(180deg);
 }
 
 .spotify-container {
