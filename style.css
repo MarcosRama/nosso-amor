@@ -53,7 +53,14 @@ body {
 
 h1 {
   color: #d81b60;
+  margin-bottom: 5px;
+}
+
+.welcome-text {
+  font-size: 0.95rem;
+  color: #ad1457;
   margin-bottom: 20px;
+  font-style: italic;
 }
 
 h2 {
@@ -92,13 +99,6 @@ h2 {
   color: #4a148c;
 }
 
-.media-container img {
-  max-width: 100%;
-  border-radius: 15px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
 /* Seções Adicionais */
 .section-box {
   background: #fff5f8;
@@ -106,6 +106,77 @@ h2 {
   border-radius: 15px;
   margin-bottom: 20px;
   border: 1px solid #f8bbd0;
+}
+
+/* Carrossel de Fotos */
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.carousel-slide img {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(216, 27, 96, 0.7);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.carousel-btn:hover {
+  background: rgba(216, 27, 96, 1);
+}
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+
+.carousel-caption {
+  font-size: 0.85rem;
+  color: #880e4f;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* Vales Surpresa */
+.btn-surprise {
+  background: #ab47bc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-surprise:hover {
+  background: #8e24aa;
+}
+
+.voucher-box {
+  margin-top: 15px;
+  padding: 15px;
+  background: #f3e5f5;
+  border: 2px dashed #ab47bc;
+  border-radius: 10px;
+  color: #4a148c;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
 /* Carta */
