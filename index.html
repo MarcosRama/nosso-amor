@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nossa História</title>
+  <title>Nossa História | Luiza & Marcos</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,7 +12,8 @@
   <div class="hearts-container" id="hearts-container"></div>
 
   <div class="container">
-    <h1>Nossa História</h1>
+    <h1>Luiza & Marcos ❤️</h1>
+    <p class="welcome-text">Bem-vinda ao nosso cantinho do amor, Luiza!</p>
 
     <!-- Contador 1: Primeiro Beijo -->
     <h2>Nosso Primeiro Beijo (18/11/2023)</h2>
@@ -36,23 +37,41 @@
       <div><span id="caso-seconds">0</span><label>Segundos</label></div>
     </div>
 
-    <!-- Foto Principal -->
-    <div class="media-container">
-      <img src="foto.jpg" alt="Foto do Casal">
+    <!-- Galeria de Fotos / Carrossel Interativo (10 Fotos) -->
+    <div class="section-box">
+      <h2>📸 Nossos Momentos</h2>
+      <div class="carousel-container">
+        <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+        <div class="carousel-slide">
+          <img src="foto1.jpg" id="carousel-img" alt="Foto de Casal">
+        </div>
+        <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+      </div>
+      <p id="carousel-caption" class="carousel-caption">Nosso momento especial ❤️ (1/10)</p>
     </div>
 
-    <!-- 1. Carta de Amor Secreta -->
+    <!-- Botão Secreto de "Surpresa / Desejo" (Vales) -->
+    <div class="section-box">
+      <h2>🎁 Vales-Surpresa do Amor</h2>
+      <p class="sub-text">Clique no botão para resgatar um vale especial!</p>
+      <button class="btn-surprise" onclick="drawVoucher()">Resgatar meu Vale-Surpresa 🎲</button>
+      <div id="voucher-display" class="voucher-box hidden">
+        <span id="voucher-text">...</span>
+      </div>
+    </div>
+
+    <!-- Carta de Amor Secreta -->
     <div class="section-box">
       <h2>💌 Uma Carta Para Você</h2>
       <button class="btn-love" onclick="toggleLetter()">Ler Minha Carta Secreta</button>
       <div id="letter" class="letter-content hidden">
-        <p>Meu amor,</p>
+        <p>Minha querida Luiza,</p>
         <p>Escrevi este site para te mostrar o quanto cada segundo ao seu lado é especial para mim. Desde o nosso primeiro beijo até hoje, construir nossa história tem sido a melhor jornada da minha vida.</p>
         <p>Obrigado por ser minha parceira, minha companheira e por trazer tanta luz e alegria para os meus dias. Te amo infinitamente!</p>
       </div>
     </div>
 
-    <!-- 3. Linha do Tempo (Timeline) -->
+    <!-- Linha do Tempo (Timeline) -->
     <div class="section-box">
       <h2>📍 Nossa Linha do Tempo</h2>
       <div class="timeline">
@@ -71,7 +90,7 @@
       </div>
     </div>
 
-    <!-- 4. Razões pelas quais eu te amo -->
+    <!-- Razões pelas quais eu te amo -->
     <div class="section-box">
       <h2>💖 Razões Pelas Quais Eu Te Amo</h2>
       <p class="sub-text">Clique nos cartões para revelar:</p>
@@ -157,6 +176,50 @@
 
     setInterval(updateTimers, 1000);
     updateTimers();
+
+    // Carrossel de Fotos (10 Fotos)
+    // Você pode alterar os textos das legendas entre as aspas simples abaixo:
+    const photos = [
+      { src: 'foto1.jpg', caption: 'Nosso começo de tudo ❤️ (1/10)' },
+      { src: 'foto2.jpg', caption: 'Com você cada momento é especial ✨ (2/10)' },
+      { src: 'foto3.jpg', caption: 'O sorriso que me encanta todos os dias 😍 (3/10)' },
+      { src: 'foto4.jpg', caption: 'Amo nossa parceria e cumplicidade 👩‍❤️‍👨 (4/10)' },
+      { src: 'foto5.jpg', caption: 'Mais um dia inesquecível ao seu lado 🌹 (5/10)' },
+      { src: 'foto6.jpg', caption: 'Minha melhor companhia para qualquer lugar 🚀 (6/10)' },
+      { src: 'foto7.jpg', caption: 'Colecionando as melhores memórias com você 📸 (7/10)' },
+      { src: 'foto8.jpg', caption: 'Obrigado por ser tão incrível pra mim 💖 (8/10)' },
+      { src: 'foto9.jpg', caption: 'Que o nosso amor continue crescendo sempre 🌟 (9/10)' },
+      { src: 'foto10.jpg', caption: 'Te amo infinitamente, Luiza! ❤️ (10/10)' }
+    ];
+    let currentSlide = 0;
+
+    function moveSlide(direction) {
+      currentSlide = (currentSlide + direction + photos.length) % photos.length;
+      const imgElem = document.getElementById('carousel-img');
+      const captionElem = document.getElementById('carousel-caption');
+      
+      imgElem.src = photos[currentSlide].src;
+      captionElem.innerText = photos[currentSlide].caption;
+    }
+
+    // Vales-Surpresa
+    const vouchers = [
+      "🎟️ Vale um Jantar Especial escolhido por você!",
+      "🍿 Vale um Cinema com Pipoca no final de semana!",
+      "💆‍♂️ Vale uma Massagem relaxante feita por mim!",
+      "🍨 Vale um Sorvete/Açaí a qualquer hora do dia!",
+      "🎬 Vale Noite de Filmes/Séries com guloseimas!",
+      "👑 Vale ter Razão em uma discussão por 1 dia!"
+    ];
+
+    function drawVoucher() {
+      const randomIndex = Math.floor(Math.random() * vouchers.length);
+      const display = document.getElementById('voucher-display');
+      const textElem = document.getElementById('voucher-text');
+      
+      textElem.innerText = vouchers[randomIndex];
+      display.classList.remove('hidden');
+    }
 
     // Lógica da Carta de Amor
     function toggleLetter() {
