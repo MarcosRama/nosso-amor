@@ -43,7 +43,8 @@
       <div class="carousel-container">
         <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
         <div class="carousel-slide">
-          <img src="foto.jpg" id="carousel-img" alt="Foto de Casal">
+          <!-- Apontando para foto1.jpg que está no seu GitHub -->
+          <img src="foto1.jpg" id="carousel-img" alt="Foto de Casal">
         </div>
         <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
       </div>
@@ -130,7 +131,7 @@
   </div>
 
   <script>
-    // Configuração dos Contadores para os 3 anos exatos
+    // Configuração dos Contadores (primeiro beijo: 18/11/2023 às 11:30)
     const primeiroBeijoDate = new Date('2023-11-18T11:30:00');
     const inicioCasoDate = new Date('2023-11-30T00:00:00');
 
@@ -139,11 +140,6 @@
       
       let diffTime = now - startDate;
       if (diffTime < 0) diffTime = 0;
-
-      let seconds = Math.floor(diffTime / 1000);
-      let minutes = Math.floor(seconds / 60);
-      let hours = Math.floor(minutes / 60);
-      let days = Math.floor(hours / 24);
 
       let years = now.getFullYear() - startDate.getFullYear();
       let monthMatch = now.getMonth() - startDate.getMonth();
@@ -189,9 +185,9 @@
     setInterval(updateTimers, 1000);
     updateTimers();
 
-    // Carrossel de Fotos (foto.jpg mantida como principal)
+    // Carrossel de Fotos (foto1.jpg como principal)
     const photos = [
-      { src: 'foto.jpg', caption: 'Nosso começo de tudo ❤️ (1/10)' },
+      { src: 'foto1.jpg', caption: 'Nosso começo de tudo ❤️ (1/10)' },
       { src: 'foto2.jpg', caption: 'Com você cada momento é especial ✨ (2/10)' },
       { src: 'foto3.jpg', caption: 'O sorriso que me encanta todos os dias 😍 (3/10)' },
       { src: 'foto4.jpg', caption: 'Amo nossa parceria e cumplicidade 👩‍❤️‍👨 (4/10)' },
@@ -228,7 +224,6 @@
       const display = document.getElementById('voucher-display');
       const textElem = document.getElementById('voucher-text');
       
-      text_val = vouchers[randomIndex];
       textElem.innerText = vouchers[randomIndex];
       display.classList.remove('hidden');
     }
