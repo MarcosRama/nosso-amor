@@ -130,7 +130,7 @@
   </div>
 
   <script>
-    // Configuração dos Contadores
+    // Configuração dos Contadores para os 3 anos exatos
     const primeiroBeijoDate = new Date('2023-11-18T11:30:00');
     const inicioCasoDate = new Date('2023-11-30T00:00:00');
 
@@ -189,7 +189,7 @@
     setInterval(updateTimers, 1000);
     updateTimers();
 
-    // Carrossel de Fotos
+    // Carrossel de Fotos (foto.jpg mantida como principal)
     const photos = [
       { src: 'foto.jpg', caption: 'Nosso começo de tudo ❤️ (1/10)' },
       { src: 'foto2.jpg', caption: 'Com você cada momento é especial ✨ (2/10)' },
@@ -228,6 +228,7 @@
       const display = document.getElementById('voucher-display');
       const textElem = document.getElementById('voucher-text');
       
+      text_val = vouchers[randomIndex];
       textElem.innerText = vouchers[randomIndex];
       display.classList.remove('hidden');
     }
